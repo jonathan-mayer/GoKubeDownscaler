@@ -13,9 +13,6 @@ This is a golang port of the popular [(py-)kube-downscaler](github.com/caas-team
 
 ## Table of contents
 
-
-
-
 <!-- Keep this updated -->
 <!-- Do add any heading bigger than h4 (####). If it shouldn't be on the list, it shouldn't be a heading -->
 <!-- Do not add h4 or smaller in this list. If it should be on here but is h4 or smaller, you should restructure -->
