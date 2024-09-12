@@ -24,10 +24,10 @@ jobs:
           go install mvdan.cc/gofumpt@latest
           # install golangci-lint
           curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
-        env:
-          SKIP: "no-commit-to-branch" # if not skipped, will always fail on main
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
+        env:
+          SKIP: "no-commit-to-branch" # if not skipped, will always fail on main
       - name: Push changes
         run: |
           git config --global user.name "github-actions[bot]"
