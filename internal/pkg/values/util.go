@@ -143,3 +143,37 @@ func GetLayerFromEnv() (Layer, error) {
 	}
 	return result, nil
 }
+
+func asExclusiveTimestamp(inc time.Time) time.Time {
+	return inc.Add(-time.Nanosecond)
+}
+
+// isTimeFromSkippedToPreviousDay checks if timeFrom skipped to the previous day
+func isTimeFromSkippedToPreviousDay(timeFrom time.Time) bool {
+	return timeFrom.Year() == -1
+}
+
+// isTimeToSkppedToNextDay checks if timeTo skipped to the following day
+func isTimeToSkippedToNextDay(timeTo time.Time) bool {
+	return asExclusiveTimestamp(timeTo).Day() == 2
+}
+
+// getWeekdayBefore returns the day before (it automatically checks if value is below 0 or above 6)
+func getWeekdayBefore(weekday time.Weekday) time.Weekday {
+	if weekday == 0 {
+		weekday = 6
+		return weekday
+	} else {
+		return (weekday + 6) % 7
+	}
+}
+
+// getWeekdayAfter returns the day after (it automatically checks if value is below 0 or above 6)
+func getWeekdayAfter(weekday time.Weekday) time.Weekday {
+	if weekday == 6 {
+		weekday = 0
+		return weekday
+	} else {
+		return (weekday + 1) % 7
+	}
+}
