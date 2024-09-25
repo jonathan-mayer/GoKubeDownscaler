@@ -1,12 +1,5 @@
 name: Deploy Website
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - website
-
 jobs:
   build:
     name: Build Website
