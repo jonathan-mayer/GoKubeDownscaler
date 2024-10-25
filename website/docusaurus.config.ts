@@ -5,7 +5,7 @@ import { tailwindPlugin } from "./plugins/tailwind-config.cts";
 import { svgoConfigPlugin } from "./plugins/svgo-config.cts";
 
 const config: Config = {
-  title: "GoKubeDownscaler",
+  title: "KubeDownscaler",
   tagline: "A vertical autoscaler for Kubernetes workloads",
   favicon: "img/CaaS-Logo.svg",
 
